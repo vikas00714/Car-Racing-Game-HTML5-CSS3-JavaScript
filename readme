@@ -1,0 +1,26 @@
+Tic Tac Toe — Enhanced (HTML/CSS/JS)
+
+Features
+- Animated placement of X/O with graceful transitions
+- Shield power-up (protects a chosen empty cell once)
+- Slow Time power-up (delays opponent's next move)
+- Play vs AI (Minimax) or 2-player local mode
+- Optional sprite-sheet visuals (sprites.png) for richer appearance
+- Responsive UI and keyboard shortcuts
+- Restart & lightweight accessibility hooks
+
+How to run
+1. Put files in a folder: index.html, style.css, script.js
+2. Optionally add sprites.png for custom visuals (see sprite spec below)
+3. Open index.html in any modern browser (Chrome/Firefox/Edge)
+4. For hosting, push to GitHub and enable GitHub Pages (or drag to Netlify)
+
+Sprite sheet (optional)
+- Name file: sprites.png
+- Arrange frames horizontally: [X-frame][O-frame][extra]
+- Each frame should be same width — e.g., 300x100 each — total width 900x100 if 3 frames
+- The CSS will set background-position automatically for basic two-frame usage
+
+Resume blurb (1–2 lines)
+- "Built an enhanced Tic Tac Toe web game (HTML/CSS/vanilla JS) with Minimax AI, animated visuals, and power-ups (Shield & Slow Time). Implemented responsive UI and optional sprite-sheet graphics."
+

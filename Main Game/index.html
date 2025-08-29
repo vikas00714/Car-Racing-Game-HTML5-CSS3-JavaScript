@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Car Game — Enhanced</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <h1>Car Game — Enhanced</h1>
+      <div class="controls">
+        <button id="muteBtn" class="btn alt">🔊 Sound</button>
+        <button id="pauseBtn" class="btn alt">⏯ Pause</button>
+        <select id="difficulty" class="select">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button id="startBtn" class="btn">Start</button>
+        <button id="restartBtn" class="btn">Restart</button>
+      </div>
+    </header>
+
+    <main class="carGame" id="wrap">
+      <div class="hud">
+        <div id="score" class="score">Score: 0 | Speed: 5</div>
+        <div id="powerups" class="powerups">
+          <button id="shieldBtn" class="pwr">🛡 Shield (<span id="shieldCnt">1</span>)</button>
+          <button id="slowBtn" class="pwr">🐢 Slow (<span id="slowCnt">1</span>)</button>
+        </div>
+      </div>
+
+      <div class="leader" id="leaderboard">
+        <h4>Top Scores</h4>
+        <ol id="boardList"></ol>
+        <button id="clearLb" class="small">Clear</button>
+      </div>
+
+      <div class="gameArea" id="gameArea">
+        <div class="road" id="road"></div>
+      </div>
+
+      <div class="touchControls" id="touchControls">
+        <button class="tbtn" id="leftBtn">◀</button>
+        <button class="tbtn" id="rightBtn">▶</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Use arrow keys (← →) or touch controls. Speed increases over time. Avoid enemy cars.</p>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

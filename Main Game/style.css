@@ -1,0 +1,243 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111827;
+  --accent: #2457c5;
+  --accent2: #10ac84;
+  --danger: #ee5253;
+  --lane: #c8d6e5;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+}
+body {
+  background: linear-gradient(180deg, #071126, #0b1220);
+  color: #e6eef8;
+  display: flex;
+  justify-content: center;
+  padding: 18px;
+}
+.shell {
+  width: min(960px, 98vw);
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 10px;
+}
+.topbar h1 {
+  font-size: 18px;
+}
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn.alt {
+  background: #243248;
+}
+.select {
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #e6eef8;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.carGame {
+  position: relative;
+  background: transparent;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  min-height: 74vh;
+}
+.hud {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+.score {
+  background: var(--accent2);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.powerups {
+  display: flex;
+  gap: 8px;
+}
+.pwr {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--accent2);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.leader {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(11, 17, 25, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 120px;
+  z-index: 5;
+}
+.leader h4 {
+  margin-bottom: 6px;
+  color: #a5b4fc;
+}
+.leader ol {
+  list-style: none;
+  padding-left: 6px;
+}
+.leader li {
+  display: flex;
+  justify-content: space-between;
+  color: #cbd5e1;
+  padding: 2px 0;
+}
+.small {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  padding: 6px;
+  border-radius: 8px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.gameArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 78vh;
+  padding: 20px;
+}
+.road {
+  width: 400px;
+  max-width: 94%;
+  height: 100%;
+  background: var(--panel);
+  position: relative;
+  border-left: 7px dashed var(--lane);
+  border-right: 7px dashed var(--lane);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+.lines {
+  position: absolute;
+  width: 10px;
+  height: 100px;
+  background: #fff;
+  left: 50%;
+  margin-left: -5px;
+  opacity: 0.9;
+  border-radius: 4px;
+}
+
+
+.myCar,
+.enemyCar {
+  position: absolute;
+  border-radius: 6px;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.4);
+  background: #2563eb;
+}
+.myCar {
+  width: 50px;
+  height: 90px;
+  bottom: 120px;
+  left: 175px;
+  transition: left 0.18s cubic-bezier(0.22, 0.9, 0.12, 1), top 0.12s linear;
+}
+.enemyCar {
+  width: 40px;
+  height: 70px;
+  background: #ef4444;
+  transition: top 0.05s linear;
+}
+
+
+.skin-my {
+  background-image: url("car2.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.skin-enemy {
+  background-image: url("car4.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+
+.touchControls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  display: none;
+  gap: 12px;
+  z-index: 6;
+}
+.tbtn {
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+@media (max-width: 560px) {
+  .touchControls {
+    display: flex;
+  }
+  .road {
+    width: 92vw;
+  }
+}
+
+
+.crashOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 20px;
+  z-index: 8;
+}
+
+
+.footer {
+  padding: 12px 6px;
+  color: #9aa4b2;
+  text-align: center;
+}
